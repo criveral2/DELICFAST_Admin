@@ -1,0 +1,7 @@
+{
+  "name": "delicfastadmin",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
