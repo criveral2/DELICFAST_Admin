@@ -30,7 +30,11 @@ const routes: Routes = [
   {
     path: 'categoria',
     loadChildren: () => import('./gestion/categoria/categoria.module').then( m => m.CategoriaPageModule)
+  },  {
+    path: 'modif-admin',
+    loadChildren: () => import('./gestion/modif-admin/modif-admin.module').then( m => m.ModifAdminPageModule)
   }
+
 
 ];
 

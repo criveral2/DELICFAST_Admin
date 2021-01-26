@@ -31,6 +31,10 @@ export class HomePage implements OnInit {
     
   }
 
+    modificarEmpresa(){
+    this.route.navigate(["/modif-admin"]);
+    
+  }
 
 
 
