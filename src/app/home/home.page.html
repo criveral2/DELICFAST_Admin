@@ -1,10 +1,84 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>home</ion-title>
+<ion-header >
+  <ion-toolbar color="tema">
+      <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <div class="ion-text-center">
+        <ion-title>Deli Fast</ion-title>
+      </div>
+
+      <div slot="end" class="icono ion-activatable repple-parent">
+        <ion-ripple-effect>
+
+        </ion-ripple-effect>
+        <ion-icon name="log-out"></ion-icon>
+      </div>
+      
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <h1>hola </h1>
+
+
+<ion-content color="content">
+  
+ 
+  <ion-slides >
+      
+      <ion-slide>
+          <ion-card>
+            <div class="slidecontent">
+              <img src="/assets/imagenes/categoria.jpg" /> 
+            </div>
+
+              <ion-card-header class="card">
+                  <ion-card-title>
+                    <ion-button shape="round">Crear Categoria</ion-button>
+
+                  </ion-card-title>
+              </ion-card-header>
+
+          </ion-card>
+      </ion-slide>
+
+  </ion-slides>
+
+
+  <ion-slides >
+      
+    <ion-slide>
+        <ion-card>
+        
+            <img src="/assets/imagenes/productos.jpg" />
+      
+
+            <ion-card-header>
+                <ion-card-title>
+                  <ion-button shape="round">Crear Producto</ion-button>
+                </ion-card-title>
+            </ion-card-header>
+        </ion-card>
+    </ion-slide>
+
+</ion-slides>
+
+<ion-slides >
+      
+  <ion-slide>
+      <ion-card>
+       
+          <img src="/assets/imagenes/empresa.jpg" />
+        
+          <ion-card-header>
+              <ion-card-title>
+                <ion-button shape="round">Modificar Empresa</ion-button>
+              </ion-card-title>
+          </ion-card-header>
+      </ion-card>
+  </ion-slide>
+
+</ion-slides>
+
+
+
 
 </ion-content>
