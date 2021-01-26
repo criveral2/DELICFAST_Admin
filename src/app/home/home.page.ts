@@ -1,4 +1,7 @@
+
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-home',
@@ -13,10 +16,21 @@ export class HomePage implements OnInit {
     pagination:false
   }
 
-  constructor() { }
+  constructor(public route:Router) { }
 
   ngOnInit() {
   }
+
+  registrarCategoria(){
+    this.route.navigate(["/categoria"]);
+    
+  }
+
+  registrarProducto(){
+    this.route.navigate(["/producto"]);
+    
+  }
+
 
 
 
