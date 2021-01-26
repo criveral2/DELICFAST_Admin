@@ -7,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePage implements OnInit {
 
+  opciones={
+    slidesPerView:2,
+    freeMode:true,
+    pagination:false
+  }
+
   constructor() { }
 
   ngOnInit() {
   }
+
+
 
 }
