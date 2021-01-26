@@ -5,7 +5,6 @@ export class Category {
     img:String;
     nombre:String;
     descripcion:String;
-    companias?:Company[];
-    productos?:Product[]
+    productos?:Product[];
     
 }
