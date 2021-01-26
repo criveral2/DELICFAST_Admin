@@ -22,7 +22,15 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+  },  {
+    path: 'gestion',
+    loadChildren: () => import('./gestion/gestion.module').then( m => m.GestionPageModule)
+  },
+  {
+    path: 'producto',
+    loadChildren: () => import('./gestion/producto/producto.module').then( m => m.ProductoPageModule)
   }
+
 ];
 
 //folder/Inbox
