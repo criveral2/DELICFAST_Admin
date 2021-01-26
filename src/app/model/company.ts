@@ -1,5 +1,5 @@
 import { Time } from '@angular/common';
-import { Category } from './category';
+
 export class Company {
     uid:string;
     img:string;
@@ -11,7 +11,9 @@ export class Company {
     horario_apertura:Time;
     horario_cierre:Time;
     descripcion:string;
-    categorias?:Category[];
+    categoriaEmpresaid: string;
+    uidUsuario: string;
+
 
 
 }

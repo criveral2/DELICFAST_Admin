@@ -55,6 +55,24 @@
   <ion-input [(ngModel)]="empresa.descripcion"></ion-input>
 </ion-item>
 
+
+
+<!--     
+  check
+-->
+<ion-item>
+  <ion-label>Categoria</ion-label>
+  <ion-select [(ngModel)]="empresa.categoriaEmpresaid"  >
+    <ion-select-option [value]="cat.categoriaEuid" *ngFor="let cat of categorias ">{{cat.nombre}}</ion-select-option>
+   
+  </ion-select>
+</ion-item>
+
+<!-- <h1>{{empresa.categoriaEmpresaid}}</h1> -->
+
+
+
+
 <ion-button (click)="crearEmpresa()" xpand="block ">Crear Empresa</ion-button>
 
 
