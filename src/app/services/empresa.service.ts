@@ -12,19 +12,10 @@ export class EmpresaService {
   constructor(public afs: AngularFirestore) { }
 
 
-
-
-
   getCategoriasEmpresa() : Observable<any>{
     return this.afs.collection("categoriaEmpresa").valueChanges();
 
   }
-
-
-
-
-
-
 
   guardarEmpresa(empresa: Company){
 
@@ -37,8 +28,6 @@ export class EmpresaService {
 
 
   }
-
-  
 
   getEmpresa(){
     return this.afs.collection("empresas").valueChanges();
