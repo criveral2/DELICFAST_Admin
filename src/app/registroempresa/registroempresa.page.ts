@@ -3,6 +3,9 @@ import { Company } from '../model/company';
 import { NavigationExtras, Router } from '@angular/router';
 import { EmpresaService } from '../services/empresa.service';
 import { Observable } from 'rxjs';
+import { UUID } from 'angular2-uuid';
+import { AngularFireStorage} from '@angular/fire/storage';
+import {​​ finalize }​​ from 'rxjs/operators';
 
 @Component({
   selector: 'app-registroempresa',
@@ -12,12 +15,12 @@ import { Observable } from 'rxjs';
 export class RegistroempresaPage implements OnInit {
   empresa: Company = new Company();
 
-
+  imagenLogo:any;
   categorias : any[];
 
   categoriaEmpUid: string ;
 
-  constructor(public router: Router, public empresaService: EmpresaService) { }
+  constructor(public router: Router, public empresaService: EmpresaService, public storage: AngularFireStorage) { }
 
   ngOnInit() {
     this.recuperarCategoriasEm();
@@ -36,18 +39,8 @@ export class RegistroempresaPage implements OnInit {
    
   }
 
-
-
-
-
-
-
-
-
-  
-
   crearEmpresa(){
-    this.empresa.uidUsuario="cRKHfqJAq1olzVcLYKjb";
+    this.empresa.uidUsuario="6k8ndfYGOArQIUj0F9Fa";
     
     this.empresaService.guardarEmpresa(this.empresa);
     let navigationExtras: NavigationExtras ={
@@ -60,5 +53,32 @@ export class RegistroempresaPage implements OnInit {
     this.router.navigate(["/home"], navigationExtras);
 
   }
+
+
+  cargarLogo(event){
+    console.log(event);
+    if(event.target.files && event.target.files[0]){
+      this.imagenLogo=  event.target.files[0];
+
+    }
+  }
+
+
+  cargarImgBase(){
+    let uuid = UUID.UUID();
+    let path= "imagenesProducto/"+uuid; 
+    let varRef = this.storage.ref(path);
+    let subiendo=this.storage.upload(path,this.imagenLogo);
+    subiendo.snapshotChanges().pipe(finalize(()=>{
+      varRef.getDownloadURL().subscribe((subs)=>{
+        this.empresa.img=subs;
+        this.crearEmpresa();
+      })
+    })).subscribe((ano)=>{})
+    
+
+  }
+
+
 
 }
