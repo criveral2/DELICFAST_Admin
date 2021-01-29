@@ -1,10 +1,39 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>modifAdmin</ion-title>
-  </ion-toolbar>
+    <ion-toolbar color="tema">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/home"></ion-back-button>
+        </ion-buttons>
+        <ion-title style="padding-left: 0" class=" ion-text-center">Datos de la Empresa</ion-title>
+    </ion-toolbar>
+</ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <h1>hola mundo </h1>
+  
+<ion-item>
+  <ion-label position="floating" >Ingrese su logo</ion-label>
+  <ion-input ></ion-input>
+</ion-item>
+
+<!--     
+  check
+-->
+<!-- <ion-item>
+  <ion-label>Categoria</ion-label>
+  <ion-select [(ngModel)]="empresa.categoriaEmpresaid"  >
+    <ion-select-option [value]="cat.categoriaEuid" *ngFor="let cat of categorias ">{{cat.nombre}}</ion-select-option>
+   
+  </ion-select>
+</ion-item> -->
+
+<!-- <h1>{{empresa.categoriaEmpresaid}}</h1> -->
+
+
+
+
+<ion-button (click)="modificarEmpresa()" xpand="block ">Crear Empresa</ion-button>
+
+
 
 </ion-content>

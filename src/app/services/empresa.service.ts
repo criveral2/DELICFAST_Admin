@@ -43,4 +43,14 @@ export class EmpresaService {
   getEmpresa(){
     return this.afs.collection("empresas").valueChanges();
   }
+
+
+
+
+
+
+
+ 
+
+
 }
