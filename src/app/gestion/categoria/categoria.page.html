@@ -1,43 +1,43 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>categoria</ion-title>
+  <ion-toolbar color="tema">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Categoria</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-      
- 
+    <ion-item >
+      <ion-card>
+        <img src="/assets/imagenes/categoriaProducto.png" />
+        <ion-card-title >
+          <h1 class="ion-text-center"  >Ingrese su Imagen</h1>
+          <ion-input class="ion-text-center" type="file"> </ion-input>
+        </ion-card-title>
+      </ion-card>
+    </ion-item>
 
-<h1>Registrata tu empresa AQUI</h1>
+    <ion-item class="fond">
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input> </ion-input>
+    </ion-item>
 
-<ion-item>
-  <ion-label position="floating" >Ingrese su logo</ion-label>
-  <ion-input  > hola</ion-input>
-</ion-item>
-<ion-item>
-  <ion-label position="floating">Nombre de la empresa</ion-label>
-  <ion-input  > hola</ion-input>
-</ion-item>
-<ion-item>
-  <ion-label position="floating">direccion</ion-label>
-  <ion-input  > hola</ion-input>
-</ion-item>
-<ion-item>
-  <ion-label position="floating">Ruc</ion-label>
-  <ion-input  > hola</ion-input>
-</ion-item>
-<ion-item>
-  <ion-label position="floating">Telefono</ion-label>
-  <ion-input  > hola</ion-input>
-</ion-item>
+    <ion-item class="fond">
+      <ion-label position="floating">Descripcion</ion-label>
+      <ion-input> </ion-input>
+    </ion-item>
 
 
 
 
-<!--     
+
+
+
+  <!--     
   check
 -->
-<!-- <ion-item>
+  <!-- <ion-item>
   <ion-label>Categoria</ion-label>
   <ion-select [(ngModel)]="empresa.categoriaEmpresaid"  >
     <ion-select-option [value]="cat.categoriaEuid" *ngFor="let cat of categorias ">{{cat.nombre}}</ion-select-option>
@@ -45,12 +45,14 @@
   </ion-select>
 </ion-item> -->
 
-<!-- <h1>{{empresa.categoriaEmpresaid}}</h1> -->
+  <!-- <h1>{{empresa.categoriaEmpresaid}}</h1> -->
 
 
 
+  <div class="centrado" >
+    <ion-button xpand="block ">Crear Categoria Producto</ion-button>
+  </div>
 
-<ion-button  xpand="block ">Crear Empresa</ion-button>
 
 
 
