@@ -2,9 +2,9 @@
     <ion-toolbar>
         <ion-toolbar color="tema">
             <ion-buttons slot="start">
-                <ion-back-button defaultHref="/"></ion-back-button>
+                <ion-back-button defaultHref="/home"></ion-back-button>
             </ion-buttons>
-            <ion-title style="padding-left: 0" class=" ion-text-center ">Registro</ion-title>
+            <ion-title style="padding-left: 0" class=" ion-text-center ">Registro Producto</ion-title>
         </ion-toolbar>
     </ion-toolbar>
 
@@ -17,30 +17,33 @@
     <br>
     <ion-item>
         <ion-label position="floating ">Imagen</ion-label>
-        <ion-input></ion-input>
+        <ion-input (change)="cargaImagen($event)" type="file"></ion-input>
+        <h1>{{imageProdu}}</h1>
     </ion-item>
     <ion-item>
-        <ion-label position="floating ">Nombre</ion-label>
-        <ion-input></ion-input>
+        <ion-label position=" floating ">Nombre</ion-label>
+        <ion-input [(ngModel)]="producto.nombre "></ion-input>
     </ion-item>
     <ion-item>
         <ion-label position="floating ">Marca</ion-label>
-        <ion-input></ion-input>
+        <ion-input [(ngModel)]="producto.marca "></ion-input>
     </ion-item>
     <ion-item>
         <ion-label position="floating ">Precio</ion-label>
-        <ion-input></ion-input>
+        <ion-input [(ngModel)]="producto.costo" type="number"></ion-input>
     </ion-item>
     <ion-item>
         <ion-label position="floating ">Descripcion</ion-label>
-        <ion-input></ion-input>
+        <ion-input [(ngModel)]="producto.descripcion "></ion-input>
     </ion-item>
     <ion-item>
         <ion-label>Catetoria</ion-label>
-        <ion-select value="dog">
-            <ion-select-option value="cat">Cat</ion-select-option>
-            <ion-select-option value="dog">Dog</ion-select-option>
+        <ion-select value="dog ">
+            <ion-select-option value="cat ">Cat</ion-select-option>
+            <ion-select-option value="dog ">Dog</ion-select-option>
         </ion-select>
     </ion-item>
+
+    <ion-button (click)="cargarImgBase()" xpand="block ">Crear Empresa</ion-button>
 
 </ion-content>

@@ -1,24 +1,49 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content>
 
-  <img class="icon " src="../../assets/icon/logo.png">
+<ion-content  color="fondo" >
+ 
+ 
+    <img src="../../assets/imagenes/logo2.jpg"  class="fondo" />
+ 
+      
 
-  <ion-item>
-    <ion-label position="floating">Usuario</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating">Contraseña</ion-label>
-    <ion-input></ion-input>
-  </ion-item>   
-  <ion-button (click)="registrarce()" xpand="block ">Iniciar Sesion</ion-button>
+    <img src="../../assets/imagenes/login2.jpeg"  class="imagenes"/>
 
-<h2>No tienes una cuenta ?</h2>
-<p>Contactate con nosotros al correo : delic-fast@delic.com.ec</p>
+    
+    <ion-item>
+      <ion-label position="floating">Usuario</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input></ion-input>
+    </ion-item>   
+    
+    <div class="centrarbtn">
+      <ion-button color="dark" (click)="registrarce()"  xpand="block " >Iniciar Sesion</ion-button>
+      <h5>No tienes una cuenta ?</h5>
+      <p>Contactate con nosotros al correo:</p>
+      <ion-row>
+        <ion-col>
+          <ion-label ></ion-label>  
+          <a routerLink="/resetpass"><small>jochoac6@est.ups.edu.ec</small></a>         
+        </ion-col>
+      </ion-row>
+
+    
+
+     
+     
+         
+       
+      
+      
+
+    </div>
+   
+  
+ 
+    
+  
 
 </ion-content>

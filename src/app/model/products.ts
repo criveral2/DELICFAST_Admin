@@ -1,8 +1,8 @@
 export class Product {
-    uid:String;
-    img:String;
-    nombre:String;
-    marca:String;
-    descripcion:String;
-    costo:String;
+    uid:string;
+    img:string;
+    nombre:string;
+    marca:string;
+    descripcion:string;
+    costo:string;
 }
