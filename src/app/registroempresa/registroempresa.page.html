@@ -21,8 +21,11 @@
 <ion-item>
   <ion-label position="floating" >Ingrese su logo</ion-label>
   <ion-input (change)="cargarLogo($event)" type="file" ></ion-input>
-  <h1>{{imagenLogo}}</h1>
+  <!-- <h1>{{imagenLogo}}</h1> -->
+
 </ion-item>
+
+
 <ion-item>
   <ion-label position="floating">Nombre de la empresa</ion-label>
   <ion-input [(ngModel)]="empresa.nombre"></ion-input>

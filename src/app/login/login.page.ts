@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AutentificationService } from '../services/autentification.service';
+import { Company } from '../model/company';
 
 
 @Component({
@@ -8,16 +10,40 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
+
+  codigoUsuario : string;
+  empresa : Company = new Company();
+  email : string = "";
+  contra : string = "";
+  bandera :boolean = false;
   
 
-  constructor(public router: Router) { }
+  constructor(public router: Router, public autentification: AutentificationService) { }
 
   ngOnInit() {
   }
 
-  registrarce(){
-    this.router.navigate(["/registroempresa"]);
-    
+
+  async logerace(){
+
+    await this.autentification.autentificarLogin(this.email, this.contra).then((respuesta :any) =>{
+      
+      this.codigoUsuario = respuesta.user.uid;
+      console.log(this.codigoUsuario);
+    } ).catch(error =>{ console.log(error) })
+
+
+    await this.autentification.findEmpresaPorUsuario(this.codigoUsuario).subscribe(resultado =>
+      {      
+        if(resultado.length == 0){
+          this.router.navigate(["/registroempresa"]);
+        } else{
+          this.router.navigate(["/home"]);
+        }      
+      })
+
+  
+
   }
 
 }
