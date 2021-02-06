@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { EmpresaService } from '../../services/empresa.service';
 
 @Component({
   selector: 'app-modif-admin',
@@ -8,9 +9,15 @@ import { Router } from '@angular/router';
 })
 export class ModifAdminPage implements OnInit {
 
-  constructor(public router: Router) { }
+  empresa : any[];
+
+  constructor(public router: Router, public empresaService: EmpresaService) { }
 
   ngOnInit() {
+    this.empresaService.getEmpresa().subscribe(respuesta =>{
+      this.empresa = respuesta;
+      console.log(this.empresa);
+    })
   }
 
   modificarEmpresa(){

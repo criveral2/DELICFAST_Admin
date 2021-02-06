@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Company } from '../model/company';
-import { NavigationExtras, Router } from '@angular/router';
+import { NavigationExtras, Router, ActivatedRoute } from '@angular/router';
 import { EmpresaService } from '../services/empresa.service';
 import { Observable } from 'rxjs';
 import { UUID } from 'angular2-uuid';
 import { AngularFireStorage} from '@angular/fire/storage';
 import {​​ finalize }​​ from 'rxjs/operators';
+import { async } from '@angular/core/testing';
+import { AutentificationService } from '../services/autentification.service';
 
 @Component({
   selector: 'app-registroempresa',
@@ -20,12 +22,19 @@ export class RegistroempresaPage implements OnInit {
 
   categoriaEmpUid: string ;
 
-  constructor(public router: Router, public empresaService: EmpresaService, public storage: AngularFireStorage) { }
+  codigoUsuario: string;
+
+  constructor(public router: Router, public empresaService: EmpresaService, public storage: AngularFireStorage, public aute : AutentificationService) {}
 
   ngOnInit() {
-    this.recuperarCategoriasEm();
+    this.aute.recuperarStorage().then((respuesta : string) => {
+      this.codigoUsuario = respuesta
+      console.log("codigo del uduario llega a registro ", this.codigoUsuario)
+    }).catch(error => {console.log(error)})
 
-    
+    this.recuperarCategoriasEm();
+ 
+     
   }
 
 
@@ -40,17 +49,12 @@ export class RegistroempresaPage implements OnInit {
   }
 
   crearEmpresa(){
-    this.empresa.uidUsuario="6k8ndfYGOArQIUj0F9Fa";
-    
+  
+
+    this.empresa.uidUsuario=this.codigoUsuario;
     this.empresaService.guardarEmpresa(this.empresa);
-    let navigationExtras: NavigationExtras ={
-      queryParams: {
-        empresa: this.empresa
-      }
-    }
-  
-  
-    this.router.navigate(["/home"], navigationExtras);
+   
+    this.router.navigate(["/home"]);
 
   }
 

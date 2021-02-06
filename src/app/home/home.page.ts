@@ -1,6 +1,9 @@
 
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { async } from '@angular/core/testing';
+import { AutentificationService } from '../services/autentification.service';
+
 
 
 @Component({
@@ -10,29 +13,37 @@ import { Router } from '@angular/router';
 })
 export class HomePage implements OnInit {
 
+  codigoUsuario : string;
+ 
+
   opciones={
     slidesPerView:2,
     freeMode:true,
     pagination:false
   }
 
-  constructor(public route:Router) { }
+  constructor(public router:Router, public autentificacion:AutentificationService) { }
 
   ngOnInit() {
+    this.autentificacion.recuperarStorage().then((respuesta : string) => {
+      this.codigoUsuario = respuesta;
+      console.log("llego al home --------------------------------------"+ this.codigoUsuario);
+    }).catch(error => {console.log(error)})
+
   }
 
   registrarCategoria(){
-    this.route.navigate(["/categoria"]);
+    this.router.navigate(["/categoria"]);
     
   }
 
   registrarProducto(){
-    this.route.navigate(["/producto"]);
+    this.router.navigate(["/producto"]);
     
   }
 
     modificarEmpresa(){
-    this.route.navigate(["/modif-admin"]);
+    this.router.navigate(["/modif-admin"]);
     
   }
 

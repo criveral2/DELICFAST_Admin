@@ -9,7 +9,7 @@
 
       <div slot="end" class="icono ion-activatable repple-parent">
         <ion-ripple-effect>
-
+            
         </ion-ripple-effect>
         <ion-icon name="log-out"></ion-icon>
       </div>
@@ -20,6 +20,13 @@
 
 
 <ion-content color="content">
+
+  <h1>Codigo uid</h1>
+
+  <div *ngIf="codigoUsuario" >
+    <h1 >{{codigoUsuario}}</h1>
+    
+  </div>
   
  
   <ion-slides >

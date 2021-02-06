@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
 import { AutentificationService } from '../services/autentification.service';
 import { Company } from '../model/company';
 
@@ -35,14 +35,25 @@ export class LoginPage implements OnInit {
 
     await this.autentification.findEmpresaPorUsuario(this.codigoUsuario).subscribe(resultado =>
       {      
+     
+
         if(resultado.length == 0){
+          
+          this.autentification.guardarStorage(this.codigoUsuario);
+
           this.router.navigate(["/registroempresa"]);
+
         } else{
+          this.autentification.guardarStorage(this.codigoUsuario);
           this.router.navigate(["/home"]);
         }      
       })
 
-  
+  }
+
+
+
+  buscarUsuarioID(){
 
   }
 
