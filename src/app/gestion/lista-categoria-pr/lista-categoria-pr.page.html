@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>listaCategoriaPr</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-list-header>
+      LISTA DE CONTACTOS
+    </ion-list-header>
+
+   
+
+
+    <ion-item-sliding *ngFor="let catP of categorias ">
+      <ion-item-options side="start">
+        <ion-item-option >Modificar</ion-item-option>
+        <ion-item-option color="danger" >Eliminar</ion-item-option>
+      </ion-item-options>
+  
+      <ion-item >
+        <ion-card>
+          
+          <img [src]="catP.img" >
+
+          <ion-card-header>
+           
+            <ion-card-title>  <h2>{{catP.nombre}}</h2></ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <h2>{{catP.descripcion}} </h2>
+
+          </ion-card-content>
+        </ion-card>
+
+
+      
+      
+      
+
+    </ion-item>
+  
+      <ion-item-options side="end">
+        <ion-item-option >Productos</ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    
+  </ion-list>
+  
+  
+
+</ion-content>

@@ -13,19 +13,20 @@
         <img src="/assets/imagenes/categoriaProducto.png" />
         <ion-card-title >
           <h1 class="ion-text-center"  >Ingrese su Imagen</h1>
-          <ion-input class="ion-text-center" type="file"> </ion-input>
+          <ion-input class="ion-text-center" (change)="cargaImagen($event)" type="file"> </ion-input>
+          <h1> {{imagenCategoriaPro}}</h1>
         </ion-card-title>
       </ion-card>
     </ion-item>
 
     <ion-item class="fond">
       <ion-label position="floating">Nombre</ion-label>
-      <ion-input> </ion-input>
+      <ion-input [(ngModel)]="categoriaPro.nombre "> </ion-input>
     </ion-item>
 
     <ion-item class="fond">
       <ion-label position="floating">Descripcion</ion-label>
-      <ion-input> </ion-input>
+      <ion-input [(ngModel)]="categoriaPro.descripcion "> </ion-input>
     </ion-item>
 
 
@@ -50,7 +51,7 @@
 
 
   <div class="centrado" >
-    <ion-button xpand="block ">Crear Categoria Producto</ion-button>
+    <ion-button (click)="cargarImgBase()" xpand="block ">Crear Categoria Producto</ion-button>
   </div>
 
 

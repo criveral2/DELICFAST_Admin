@@ -33,6 +33,10 @@ const routes: Routes = [
   },  {
     path: 'modif-admin',
     loadChildren: () => import('./gestion/modif-admin/modif-admin.module').then( m => m.ModifAdminPageModule)
+  },
+  {
+    path: 'lista-categoria-pr',
+    loadChildren: () => import('./gestion/lista-categoria-pr/lista-categoria-pr.module').then( m => m.ListaCategoriaPrPageModule)
   }
 
 
