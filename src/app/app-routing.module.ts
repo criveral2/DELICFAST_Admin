@@ -37,6 +37,10 @@ const routes: Routes = [
   {
     path: 'lista-categoria-pr',
     loadChildren: () => import('./gestion/lista-categoria-pr/lista-categoria-pr.module').then( m => m.ListaCategoriaPrPageModule)
+  },
+  {
+    path: 'modificar-categoria-pr',
+    loadChildren: () => import('./gestion/modificar-categoria-pr/modificar-categoria-pr.module').then( m => m.ModificarCategoriaPrPageModule)
   }
 
 

@@ -14,8 +14,8 @@
 
     <ion-item-sliding *ngFor="let catP of categorias ">
       <ion-item-options side="start">
-        <ion-item-option >Modificar</ion-item-option>
-        <ion-item-option color="danger" >Eliminar</ion-item-option>
+        <ion-item-option button (click)="redirigir(catP.uid)" >Modificar</ion-item-option>
+        <ion-item-option color="danger" button (click)="delete(catP.uid)"  >Eliminar</ion-item-option>
       </ion-item-options>
   
       <ion-item >
