@@ -25,7 +25,12 @@ export class HomePage implements OnInit {
   constructor(public router:Router, public autentificacion:AutentificationService) { }
 
   ngOnInit() {
-    this.autentificacion.recuperarStorage().then((respuesta : string) => {
+  this.recuperarUsu();
+
+  }
+
+  async recuperarUsu(){
+    await this.autentificacion.recuperarStorage().then((respuesta : string) => {
       this.codigoUsuario = respuesta;
       console.log("llego al home --------------------------------------"+ this.codigoUsuario);
     }).catch(error => {console.log(error)})

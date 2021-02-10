@@ -35,7 +35,13 @@ export class EmpresaService {
 
 
 
+  modificarEmpresa(empresa: Company){
+   
+    const refEmpresa = this.afs.collection("empresas");
+    refEmpresa.doc(empresa.uid).set(Object.assign({}, empresa),{merge: true})
 
+
+  }
 
 
 

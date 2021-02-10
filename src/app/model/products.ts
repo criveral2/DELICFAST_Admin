@@ -5,4 +5,5 @@ export class Product {
     marca:string;
     descripcion:string;
     costo:string;
+    uidEmpresa:string;
 }
