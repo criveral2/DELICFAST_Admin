@@ -24,14 +24,18 @@ export class CategoriaProductoService {
 
   }
 
-  getCategoriaProducto(){
-    return this.afs.collection("categoriaProductos").valueChanges();
-  }
 
   findCategoriaPorID(uidCategoria:string) :Observable<any>{
     return this.afs.collection("categoriaProductos",ref => ref.where("uid","==",uidCategoria)).valueChanges();
 
   }
+
+  getCatEmpresa(categ : string): Observable<any>{
+    console.log(  "Que weada")
+
+    return this.afs.collection('categoriaProductos', ref => ref.where('uidEmpresa', '==', categ)).valueChanges();
+  }
+
 
   deleteCategoria(idCategoria:string){​​​​
     let doc = 'categoriaProductos/' + idCategoria;

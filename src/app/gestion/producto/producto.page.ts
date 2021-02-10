@@ -11,6 +11,9 @@ import { Category } from '../../model/category';
 import { AutentificationService } from '../../services/autentification.service';
 import { Company } from '../../model/company';
 
+
+
+
   
 @Component({
   selector: 'app-producto',
