@@ -10,9 +10,8 @@ import { Observable } from 'rxjs';
 import { Category } from '../../model/category';
 import { AutentificationService } from '../../services/autentification.service';
 import { Company } from '../../model/company';
-import { Console } from 'console';
 
-
+  
 @Component({
   selector: 'app-producto',
   templateUrl: './producto.page.html',
@@ -78,6 +77,10 @@ export class ProductoPage implements OnInit {
 
   crearProducto(){
     console.log(this.imageProdu)
+    this.producto.uidEmpresa = this.codigoEmpresa;
+    this.producto.uidCategoria = this.variable;
+    console.log(this.codigoEmpresa + "--------------------------"+ this.variable)
+    
     this.productoService.guardarProducto(this.producto, this.variable);
     this.router.navigate(["/home"])
   }
