@@ -3,6 +3,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Storage } from '@ionic/storage'
+import { first } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +21,23 @@ export class AutentificationService {
   findEmpresaPorUsuario(uidUser : string): Observable<any>{
     return this.afs.collection("empresas",ref => ref.where("uidUsuario","==",uidUser)).valueChanges();
 
+  }
+
+  async findModEmpresaPorUid(uidUser : string){
+    try{
+      let aux = await this.afs.collection("empresas",ref => ref.where("uidUsuario","==",uidUser)).valueChanges()
+                .pipe(first()).toPromise().then(doc => {
+                  return doc;
+                }).catch(error => {
+                  throw error;
+              });
+        if(aux==null)
+          return {};
+        return aux[0];
+    }catch(error){
+    console.error("Error get contactos ById", error);
+    throw error;
+    } 
   }
 
 

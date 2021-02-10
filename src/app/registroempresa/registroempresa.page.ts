@@ -49,7 +49,6 @@ export class RegistroempresaPage implements OnInit {
   }
 
   crearEmpresa(){
-  
 
     this.empresa.uidUsuario=this.codigoUsuario;
     this.empresaService.guardarEmpresa(this.empresa);

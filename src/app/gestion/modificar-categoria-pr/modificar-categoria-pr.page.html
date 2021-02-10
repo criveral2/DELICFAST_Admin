@@ -1,6 +1,9 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>modificar-categoria-pr</ion-title>
+  <ion-toolbar color="tema">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/lista-categoria-pr"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Modificar</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -26,16 +29,13 @@
           </ion-item>
         </ion-card-content>
 
-        <div class="centrado" >
-          <ion-button color="dark" (click)="cargarImgBase()" xpand="block ">Modificar</ion-button>
-        </div>
-
-          
-          
-
                 
       </ion-card>
+      
   </ion-item>   
+  <div class="centrado" >
+    <ion-button color="dark" (click)="cargarImgBase()" xpand="block ">Modificar</ion-button>
+  </div>
 </ion-list>
    
  </ng-container>
