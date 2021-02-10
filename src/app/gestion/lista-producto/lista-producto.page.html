@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>lista-producto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h1>LISTA PRODUCTOS</h1>
+
+  
+  <ion-list>
+
+    <ion-item-sliding *ngFor="let pro of productos ">
+      <ion-item-options side="start">
+        <ion-item-option  >Modificar</ion-item-option>
+        <ion-item-option color="danger">Eliminar</ion-item-option>
+      </ion-item-options>
+  
+      <ion-item >
+        <ion-card class="slidecontent" style="background-image:url({{pro.img}})">
+
+
+            <h2>{{pro.nombre}}</h2>
+            <h2>{{pro.marca}}</h2>
+            <h2>{{pro.descripcion}}</h2>
+            <h2>{{pro.costo}}</h2>
+
+       
+        </ion-card>
+
+
+      
+      
+      
+
+    </ion-item>
+    </ion-item-sliding>
+
+    
+  </ion-list>
+
+</ion-content>

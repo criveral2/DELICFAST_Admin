@@ -8,6 +8,72 @@ import { Category } from '../model/category';
 })
 export class CategoriaProductoService {
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
   constructor(public afs: AngularFirestore) { }
 
   guardarCategoriaP(categoria: Category){
@@ -32,6 +98,10 @@ export class CategoriaProductoService {
     return this.afs.collection("categoriaProductos",ref => ref.where("uid","==",uidCategoria)).valueChanges();
 
   }
+
+  
+
+ 
 
   deleteCategoria(idCategoria:string){​​​​
     let doc = 'categoriaProductos/' + idCategoria;

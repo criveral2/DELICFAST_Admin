@@ -7,6 +7,67 @@ import { Product } from '../model/products';
 })
 export class ProductoService {
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
   constructor(public afs: AngularFirestore) { }
 
 
@@ -21,6 +82,10 @@ export class ProductoService {
 
 
 
+  }
+
+  getProducto(){
+    return this.afs.collection("productos").valueChanges();
   }
 
 }
