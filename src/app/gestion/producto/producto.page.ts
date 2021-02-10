@@ -10,7 +10,6 @@ import { Observable } from 'rxjs';
 import { Category } from '../../model/category';
 import { AutentificationService } from '../../services/autentification.service';
 import { Company } from '../../model/company';
-import { Console } from 'console';
 
 
 @Component({
