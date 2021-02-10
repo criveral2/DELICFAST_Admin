@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 import { Category } from '../model/category';
 
 @Injectable({
@@ -26,6 +27,19 @@ export class CategoriaProductoService {
   getCategoriaProducto(){
     return this.afs.collection("categoriaProductos").valueChanges();
   }
+
+  findCategoriaPorID(uidCategoria:string) :Observable<any>{
+    return this.afs.collection("categoriaProductos",ref => ref.where("uid","==",uidCategoria)).valueChanges();
+
+  }
+
+  deleteCategoria(idCategoria:string){​​​​
+    let doc = 'categoriaProductos/' + idCategoria;
+    return this.afs.doc(doc).delete();
+
+  }​​​​
+
+
 
  
 

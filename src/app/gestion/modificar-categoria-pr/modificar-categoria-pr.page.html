@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>modificar-categoria-pr</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+ <ng-container *ngIf="categoriaPro; else elseTemplate">
+  <ion-list >
+    <ion-item >
+      <ion-card >
+
+      <img [src]="categoriaPro.img"/>
+        
+
+        <ion-input class="ion-text-center" (change)="cargaImagen($event)" type="file" > </ion-input>
+        <h1> {{imagenCategoriaPro}}</h1>
+
+        <ion-card-title class="centrado">
+          <ion-input [(ngModel)]="categoriaPro.nombre" > </ion-input>
+        </ion-card-title>
+  
+        <ion-card-content>
+          <ion-item>
+            <ion-textarea placeholder="Enter more information here..." [(ngModel)]="categoriaPro.descripcion"> </ion-textarea>
+          </ion-item>
+        </ion-card-content>
+
+        <div class="centrado" >
+          <ion-button color="dark" (click)="cargarImgBase()" xpand="block ">Modificar</ion-button>
+        </div>
+
+          
+          
+
+                
+      </ion-card>
+  </ion-item>   
+</ion-list>
+   
+ </ng-container>
+ <ng-template #elseTemplate>
+   <h1>Cargando...</h1>
+   
+ </ng-template>
+ 
+
+
+  
+  
+
+
+
+</ion-content>

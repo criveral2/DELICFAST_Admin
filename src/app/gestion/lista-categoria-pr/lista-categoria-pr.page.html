@@ -7,32 +7,27 @@
 <ion-content>
 
   <ion-list>
-    <ion-list-header>
-      LISTA DE CONTACTOS
-    </ion-list-header>
+   
 
    
 
 
     <ion-item-sliding *ngFor="let catP of categorias ">
       <ion-item-options side="start">
-        <ion-item-option >Modificar</ion-item-option>
-        <ion-item-option color="danger" >Eliminar</ion-item-option>
+        <ion-item-option button (click)="redirigir(catP.uid)" >Modificar</ion-item-option>
+        <ion-item-option color="danger" button (click)="delete(catP.uid)"  >Eliminar</ion-item-option>
       </ion-item-options>
   
       <ion-item >
-        <ion-card>
+        <ion-card class="slidecontent" style="background-image:url({{catP.img}})">
+
+
+            <h2>{{catP.nombre}}</h2>
+            
+
+       
           
-          <img [src]="catP.img" >
-
-          <ion-card-header>
-           
-            <ion-card-title>  <h2>{{catP.nombre}}</h2></ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <h2>{{catP.descripcion}} </h2>
-
-          </ion-card-content>
+         
         </ion-card>
 
 

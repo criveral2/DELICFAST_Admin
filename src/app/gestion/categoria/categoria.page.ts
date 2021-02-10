@@ -24,7 +24,7 @@ export class CategoriaPage implements OnInit {
   crearCategoriaProducto(){
     console.log(this.imagenCategoriaPro)
     this.categoriaService.guardarCategoriaP(this.categoriaPro);
-    this.router.navigate(["/home"])
+    this.router.navigate(["/lista-categoria-pr"])
   }
 
   cargarImgBase(){
