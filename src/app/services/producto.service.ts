@@ -40,6 +40,15 @@ export class ProductoService {
 
   }
 
+  getProductosCat( uidCategoria : string):Observable<any>{​​
+    console.log("llego el id de la categoria0"+ uidCategoria)
+    const refPro= this.afs.collection("categoriaProductos");
+   return  refPro.doc(uidCategoria).collection("productos",ref => ref.where("uidCategoria","==",uidCategoria)).valueChanges();
+
+  }​​
+
+  
+
  
   // getCatEmpresa() : Observable<any>{
   //   return this.afs.collection("categoriaProductos").valueChanges();

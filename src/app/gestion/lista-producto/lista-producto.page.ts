@@ -19,7 +19,7 @@ export class ListaProductoPage implements OnInit {
   constructor(private productoS:ProductoService ,public router:Router,private rout:ActivatedRoute) {
     this.rout.queryParams.subscribe(result=>{
       if(this.router.getCurrentNavigation().extras.queryParams){
-        this.uidC=this.router.getCurrentNavigation().extras.queryParams.uidCategoria;
+        this.uidC=this.router.getCurrentNavigation().extras.queryParams.uidCategoria2;
         console.log(this.uidC);
       }
     }) 
@@ -32,7 +32,7 @@ export class ListaProductoPage implements OnInit {
   }
 
   async listaProducto(){
-    await this.productoS.getProducto(this.uidC).subscribe((respuesta:any)=>{
+    await this.productoS.getProductosCat(this.uidC).subscribe((respuesta:any)=>{
      
       this.productos = respuesta;
       console.log( this.productos);
