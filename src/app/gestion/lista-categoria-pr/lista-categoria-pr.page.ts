@@ -84,7 +84,7 @@ export class ListaCategoriaPrPage implements OnInit {
 
     console.log(uidD)
     let navigateExtras:NavigationExtras={
-      queryParams:{uidCategoria2:uidD}
+      queryParams:{uidCategoria:uidD}
 
     };
     this.router.navigate(["/lista-producto"],navigateExtras)
