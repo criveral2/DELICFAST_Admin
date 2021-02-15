@@ -12,16 +12,17 @@
 </ion-header>
 
 <ion-content>
-    <br>
-    <h3 class="titulo">Registar producto</h3>
-    <br>
-    <ion-item>
-        <ion-label position="floating ">Imagen</ion-label>
+    <ion-card >
+        <img src="/assets/imagenes/categoriaProducto.png" />
+        <ion-card-title >
+          <h6 class="fond"  class="ion-text-center"  >Ingrese su Imagen</h6>
+        </ion-card-title >
+        
         <ion-input (change)="cargaImagen($event)" type="file"></ion-input>
         <h1>{{imageProdu}}</h1>
-    </ion-item>
+ 
     <ion-item>
-        <ion-label position=" floating ">Nombre</ion-label>
+        <ion-label position="floating ">Nombre</ion-label>
         <ion-input [(ngModel)]="producto.nombre "></ion-input>
     </ion-item>
     <ion-item>
@@ -37,6 +38,52 @@
         <ion-input [(ngModel)]="producto.descripcion "></ion-input>
     </ion-item>
 
+    <ng-container *ngIf="aux; else elseTemplate">
+      
+        <ion-item>
+            <ion-label>Categoria</ion-label>
+            <ion-select [(ngModel)]="variable" >
+              <ion-select-option [value]="cat.uid" *ngFor="let cat of aux  ">
+                  
+                <ion-item *ngIf="cat.nombre ">
+                    {{cat.nombre}}
+                </ion-item>
+         
+            </ion-select-option>
+             
+            </ion-select>
+          </ion-item>
+        
+          {{variable}}
+    
+    
+    
+        </ng-container>
+        <ng-template #elseTemplate>
+          <h1>Cargando...</h1>
+          
+        </ng-template>
+    
+     
+      
+      <!-- <h1>{{empresa.categoriaEmpresaid}}</h1> -->
+      
+      
+       <div class="centrado">
+        <ion-button color="dark" (click)="cargarImgBase()" xpand="block ">Crear Empresa</ion-button>
+
+       </div>
+       
+    
+    
+    
+    
+        
+    
+    
+    
+
+</ion-card >
 
 
 <!--     
@@ -46,47 +93,7 @@
 
 
 
-  <ng-container *ngIf="aux; else elseTemplate">
-      
-    <ion-item>
-        <ion-label>Categoria</ion-label>
-        <ion-select [(ngModel)]="variable" >
-          <ion-select-option [value]="cat.uid" *ngFor="let cat of aux  ">
-              
-            <ion-item *ngIf="cat.nombre ">
-                {{cat.nombre}}
-            </ion-item>
-     
-        </ion-select-option>
-         
-        </ion-select>
-      </ion-item>
-    
-      {{variable}}
-
-
-
-    </ng-container>
-    <ng-template #elseTemplate>
-      <h1>Cargando...</h1>
-      
-    </ng-template>
-
  
-  
-  <!-- <h1>{{empresa.categoriaEmpresaid}}</h1> -->
-  
-  
-
-    <ion-button (click)="cargarImgBase()" xpand="block ">Crear Empresa</ion-button>
-
-
-
-
-    
-
-
-
 
 
 
