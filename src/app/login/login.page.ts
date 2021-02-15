@@ -26,7 +26,7 @@ export class LoginPage implements OnInit {
 
   async logerace(){
 
-    await this.autentification.autentificarLogin(this.email, this.contra).then((respuesta :any) =>{
+    this.autentification.autentificarLogin(this.email,this.contra).then((respuesta :any) =>{
       
       this.codigoUsuario = respuesta.user.uid;
       console.log(this.codigoUsuario);
