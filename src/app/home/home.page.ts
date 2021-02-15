@@ -52,6 +52,12 @@ export class HomePage implements OnInit {
     
   }
 
+  salir(){
+    console.log("salir de la sesion")
+    this.autentificacion.logout();
+    
+  }
+
 
 
 }
