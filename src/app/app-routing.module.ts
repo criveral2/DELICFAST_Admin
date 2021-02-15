@@ -49,6 +49,10 @@ const routes: Routes = [
   {
     path: 'modificar-producto',
     loadChildren: () => import('./gestion/modificar-producto/modificar-producto.module').then( m => m.ModificarProductoPageModule)
+  },
+  {
+    path: 'pedido',
+    loadChildren: () => import('./pedido/pedido.module').then( m => m.PedidoPageModule)
   }
 
 
