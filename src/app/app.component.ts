@@ -42,6 +42,12 @@ export class AppComponent implements OnInit {
       url: 'modif-admin',
       icon: 'laptop'
       
+    },
+    {
+      title: 'Pedidos',
+      url: 'pedido',
+      icon: 'create'
+      
     }
     
     
