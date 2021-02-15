@@ -41,6 +41,14 @@ const routes: Routes = [
   {
     path: 'modificar-categoria-pr',
     loadChildren: () => import('./gestion/modificar-categoria-pr/modificar-categoria-pr.module').then( m => m.ModificarCategoriaPrPageModule)
+  },
+  {
+    path: 'lista-producto',
+    loadChildren: () => import('./gestion/lista-producto/lista-producto.module').then( m => m.ListaProductoPageModule)
+  },
+  {
+    path: 'modificar-producto',
+    loadChildren: () => import('./gestion/modificar-producto/modificar-producto.module').then( m => m.ModificarProductoPageModule)
   }
 
 

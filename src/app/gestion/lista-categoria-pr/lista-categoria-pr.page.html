@@ -1,16 +1,15 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>listaCategoriaPr</ion-title>
+  <ion-toolbar color="tema">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Lista Categoria</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
   <ion-list>
-   
-
-   
-
 
     <ion-item-sliding *ngFor="let catP of categorias ">
       <ion-item-options side="start">
@@ -38,7 +37,7 @@
     </ion-item>
   
       <ion-item-options side="end">
-        <ion-item-option >Productos</ion-item-option>
+        <ion-item-option button (click)="redirigir2(catP.uid)">Productos</ion-item-option>
       </ion-item-options>
     </ion-item-sliding>
 

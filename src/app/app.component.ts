@@ -20,30 +20,31 @@ export class AppComponent implements OnInit {
     {
       title: 'Listar Categorias',
       url: 'lista-categoria-pr',
-      icon: 'paper-plane'
+      icon: 'list'
+      
     },
     {
-      title: 'Favorites',
-      url: '/folder/Favorites',
-      icon: 'heart'
+      title: 'Crear Categoria',
+      url: 'categoria',
+      icon: 'create'
+      
     },
     {
-      title: 'Archived',
-      url: '/folder/Archived',
-      icon: 'archive'
+      title: 'Crear Producto',
+      url: 'producto',
+      icon: 'create'
+      
     },
     {
-      title: 'Trash',
-      url: '/folder/Trash',
-      icon: 'trash'
-    },
-    {
-      title: 'Spam',
-      url: '/folder/Spam',
-      icon: 'warning'
+      title: 'Modificar Empresa',
+      url: 'modif-admin',
+      icon: 'laptop'
+      
     }
+    
+    
   ];
-  public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
+
 
   constructor(
     private platform: Platform,

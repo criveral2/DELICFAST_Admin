@@ -11,6 +11,10 @@ import { Observable } from 'rxjs';
   styleUrls: ['./lista-categoria-pr.page.scss'],
 })
 export class ListaCategoriaPrPage implements OnInit {
+
+
+
+  
   categorias : any[];
   uidCategoria:string;
   codigoUsuario : string;
@@ -75,5 +79,15 @@ export class ListaCategoriaPrPage implements OnInit {
     console.log("ELIMINADO")
 
   }
-  
+
+  redirigir2(uidD:string){
+
+    console.log(uidD)
+    let navigateExtras:NavigationExtras={
+      queryParams:{uidCategoria:uidD}
+
+    };
+    this.router.navigate(["/lista-producto"],navigateExtras)
+  }
+ 
 }
