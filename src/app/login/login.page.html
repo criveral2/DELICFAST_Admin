@@ -18,11 +18,13 @@
     </ion-item>
     <ion-item>
       <ion-label position="floating">Contraseña</ion-label>
-      <ion-input [(ngModel)] = "contra" type="password"></ion-input>
+      <ion-input [(ngModel)] = "contra" type="password" name="password" [type]="showPassword ? 'text':'password'"></ion-input>
+      <ion-icon slot="end" [name]="passwordToggleIcon" (click)="togglePassword()"></ion-icon>
     </ion-item>   
     
     <div class="centrarbtn">
       <ion-button color="dark" (click)="logerace()"  xpand="block " >Iniciar Sesion</ion-button>
+   
       <h6>No tienes una cuenta ?</h6>
       <h6>Contactate con nosotros al correo:</h6>
       <ion-row>

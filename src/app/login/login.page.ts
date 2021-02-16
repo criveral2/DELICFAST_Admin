@@ -16,6 +16,10 @@ export class LoginPage implements OnInit {
   email : string = "";
   contra : string = "";
   bandera :boolean = false;
+  showPassword=false;
+  passwordToggleIcon='eye';
+
+
   
 
   constructor(public router: Router, public autentification: AutentificationService) { }
@@ -55,6 +59,15 @@ export class LoginPage implements OnInit {
 
   buscarUsuarioID(){
 
+  }
+
+  togglePassword():void{
+    this.showPassword=!this.showPassword;
+    if(this.passwordToggleIcon=='eye'){
+      this.passwordToggleIcon='eye-off';
+    }else{
+      this.passwordToggleIcon='eye';
+    }
   }
 
 }
