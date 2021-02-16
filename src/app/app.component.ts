@@ -59,7 +59,8 @@ export class AppComponent implements OnInit {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private login:AutentificationService
+    private login:AutentificationService,
+    public aunt: AutentificationService
   ) {
     this.initializeApp();
   }
@@ -71,11 +72,35 @@ export class AppComponent implements OnInit {
     });
   }
 
+  codigoUsuario: string;
+  usuario: Usuario = new Usuario();
+
   ngOnInit() {
     const path = window.location.pathname.split('folder/')[1];
     if (path !== undefined) {
       this.selectedIndex = this.appPages.findIndex(page => page.title.toLowerCase() === path.toLowerCase());
     }
+  }
+
+  async recuperarUsu(){
+    await this.aunt.getUsuarioStorage().then((respuesta : string) => {
+      this.codigoUsuario = respuesta;
+      console.log("llego al modificar usuario--------------------------------------"+ this.codigoUsuario);
+    }).catch(error => {console.log(error)})
+
+    this.BuscraUsu();
+
+  }
+
+  async BuscraUsu(){
+  
+    await this.aunt.findUidUsuario(this.codigoUsuario).then((resp:any)=>{
+      const aux = resp;
+      this.usuario = aux;
+      console.log(this.usuario);
+
+    })
+    
   }
 
 
