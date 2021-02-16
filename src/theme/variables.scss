@@ -284,3 +284,21 @@
   --ion-color-shade: var(--ion-color-fondo-shade);
   --ion-color-tint: var(--ion-color-fondo-tint);
 }
+
+:root {
+  --ion-color-tema1: #1d2946;
+  --ion-color-tema1-rgb: 54, 179, 201;
+  --ion-color-tema1-contrast: #ffffff;
+  --ion-color-tema1-contrast-rgb: 0, 0, 0;
+  --ion-color-tema1-shade: #309eb1;
+  --ion-color-tema1-tint: #4abbce;
+}
+
+.ion-color-tema1 {
+  --ion-color-base: var(--ion-color-tema1);
+  --ion-color-base-rgb: var(--ion-color-tema1-rgb);
+  --ion-color-contrast: var(--ion-color-tema1-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-tema1-contrast-rgb);
+  --ion-color-shade: var(--ion-color-tema1-shade);
+  --ion-color-tint: var(--ion-color-tema1-tint);
+}

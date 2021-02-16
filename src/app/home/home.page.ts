@@ -51,10 +51,19 @@ export class HomePage implements OnInit {
     this.router.navigate(["/modif-admin"]);
     
   }
+
     listaPedidos(){
     this.router.navigate(["/modif-admin"]);
     
   }
+
+  salir(){
+    console.log("salir de la sesion")
+    this.autentificacion.logout();
+    
+  }
+
+
 
 
 }

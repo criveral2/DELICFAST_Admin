@@ -4,17 +4,25 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Storage } from '@ionic/storage'
 import { first } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AutentificationService {
+  nombre:string;
 
-  constructor(private autentificacion: AngularFireAuth, public afs: AngularFirestore,private storage: Storage ) { }
+  constructor(private autentificacion: AngularFireAuth, public afs: AngularFirestore,private storage: Storage,private router:Router ) { }
 
 
   autentificarLogin(mail : string, contrasenia: string){
-    return  this.autentificacion.signInWithEmailAndPassword(mail, contrasenia)
+    return new Promise((resolve, reject)=>{
+      this.autentificacion.signInWithEmailAndPassword(mail,contrasenia).then(user =>{
+        resolve(user)
+        //this.updateUserData(user);
+      }).catch(err => reject(err));
+    })
+    
   }
 
 
@@ -66,6 +74,18 @@ export class AutentificationService {
     
     return this.storage.get("uidUusario");
   }
+
+  logout(){
+    
+    this.autentificacion.signOut().then(()=>{
+      this.router.navigate(["/login"])
+    });
+    
+  
+}
+
+
+
 
 
 }
