@@ -45,7 +45,7 @@ export class AppComponent implements OnInit {
     },
     {
       title: 'Pedidos',
-      url: 'pedido',
+      url: 'listapedidos',
       icon: 'create'
       
     }

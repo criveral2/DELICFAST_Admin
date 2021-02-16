@@ -1,20 +1,20 @@
-<ion-header >
-  <ion-toolbar color="tema">
-      <ion-buttons slot="start">
-          <ion-menu-button></ion-menu-button>
-      </ion-buttons>
-      <div class="ion-text-center">
-        <ion-title>Deli Fast</ion-title>
-      </div>
+<ion-header>
+    <ion-toolbar color="tema">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <div class="ion-text-center">
+            <ion-title>Deli Fast</ion-title>
+        </div>
 
-      <div slot="end" class="icono ion-activatable repple-parent">
-        <ion-ripple-effect>
-            
-        </ion-ripple-effect>
-        <ion-icon (click)="salir()" name="log-out"></ion-icon>
-      </div>
-      
-  </ion-toolbar>
+        <div slot="end" class="icono ion-activatable repple-parent">
+            <ion-ripple-effect>
+
+            </ion-ripple-effect>
+            <ion-icon name="log-out"></ion-icon>
+        </div>
+
+    </ion-toolbar>
 </ion-header>
 
 
@@ -23,67 +23,66 @@
 
 
 
-  <div *ngIf="codigoUsuario" >
-    
-    
-  </div>
-  
- 
-  <ion-slides >
-      
-      <ion-slide>
-          <ion-card>
-            <div class="slidecontent">
-              <img src="/assets/imagenes/categoria.jpg" /> 
-            </div>
-
-              <ion-card-header class="card">
-                  <ion-card-title>
-                    <ion-button shape="round"  (click)="registrarCategoria()" >Crear Categoria</ion-button>
-
-                  </ion-card-title>
-              </ion-card-header>
-
-          </ion-card>
-      </ion-slide>
-
-  </ion-slides>
+    <div *ngIf="codigoUsuario">
 
 
-  <ion-slides >
-      
-    <ion-slide>
-        <ion-card>
-        
-            <img src="/assets/imagenes/productos.jpg" />
-      
+    </div>
 
-            <ion-card-header>
-                <ion-card-title>
-                  <ion-button shape="round" (click)="registrarProducto()">Crear Producto</ion-button>
-                </ion-card-title>
-            </ion-card-header>
-        </ion-card>
-    </ion-slide>
 
-</ion-slides>
+    <ion-slides>
 
-<ion-slides >
-      
-  <ion-slide>
-      <ion-card>
-       
-          <img src="/assets/imagenes/empresa.jpg" />
-        
-          <ion-card-header>
-              <ion-card-title>
-                <ion-button shape="round" (click)="modificarEmpresa()">Modificar Empresa</ion-button>
-              </ion-card-title>
-          </ion-card-header>
-      </ion-card>
-  </ion-slide>
+        <ion-slide>
+            <ion-card>
+                <div class="slidecontent">
+                    <img src="/assets/imagenes/categoria.jpg" />
+                </div>
 
-</ion-slides>
+                <ion-card-header class="card">
+                    <ion-card-title>
+                        <ion-button shape="round" (click)="registrarCategoria()">Crear Categoria</ion-button>
+                    </ion-card-title>
+                </ion-card-header>
+
+            </ion-card>
+        </ion-slide>
+
+    </ion-slides>
+
+
+    <ion-slides>
+
+        <ion-slide>
+            <ion-card>
+
+                <img src="/assets/imagenes/productos.jpg" />
+
+
+                <ion-card-header>
+                    <ion-card-title>
+                        <ion-button shape="round" (click)="registrarProducto()">Crear Producto</ion-button>
+                    </ion-card-title>
+                </ion-card-header>
+            </ion-card>
+        </ion-slide>
+
+    </ion-slides>
+
+    <ion-slides>
+
+        <ion-slide>
+            <ion-card>
+
+                <img src="/assets/imagenes/empresa.jpg" />
+
+                <ion-card-header>
+                    <ion-card-title>
+                        <ion-button shape="round" (click)="modificarEmpresa()">Modificar Empresa</ion-button>
+                    </ion-card-title>
+                </ion-card-header>
+            </ion-card>
+        </ion-slide>
+
+    </ion-slides>
 
 
 

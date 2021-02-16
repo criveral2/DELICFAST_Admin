@@ -30,7 +30,8 @@ const routes: Routes = [
   {
     path: 'categoria',
     loadChildren: () => import('./gestion/categoria/categoria.module').then( m => m.CategoriaPageModule)
-  },  {
+  },
+  {
     path: 'modif-admin',
     loadChildren: () => import('./gestion/modif-admin/modif-admin.module').then( m => m.ModifAdminPageModule)
   },
@@ -53,7 +54,14 @@ const routes: Routes = [
   {
     path: 'pedido',
     loadChildren: () => import('./pedido/pedido.module').then( m => m.PedidoPageModule)
-  }
+  },  {
+    path: 'listapedidos',
+    loadChildren: () => import('./gestion/listapedidos/listapedidos.module').then( m => m.ListapedidosPageModule)
+  },
+  {
+    path: 'mapa',
+    loadChildren: () => import('./gestion/mapa/mapa.module').then( m => m.MapaPageModule)
+  },
 
 
 ];
